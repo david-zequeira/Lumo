@@ -13,7 +13,7 @@ dependencies:
     path: ../../api
   package_info_client:
     path: ../package_info_client
-  rxdart: ^0.27.5
+  rxdart: ^0.28.0
   storage:
     path: ../storage/storage
 
