@@ -1,16 +1,16 @@
 import 'package:ai_client/ai_client.dart';
 import 'package:ai_repository/ai_repository.dart';
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:uuid/uuid.dart';
 
 part 'ai_companion_event.dart';
 part 'ai_companion_state.dart';
 
 /// {@template ai_companion_bloc}
-/// BLoC for managing AI companion chat.
+/// BLoC for managing AI companion chat with state persistence.
 /// {@endtemplate}
-class AiCompanionBloc extends Bloc<AiCompanionEvent, AiCompanionState> {
+class AiCompanionBloc extends HydratedBloc<AiCompanionEvent, AiCompanionState> {
   /// {@macro ai_companion_bloc}
   AiCompanionBloc({
     required AIRepository aiRepository,
@@ -172,5 +172,44 @@ class AiCompanionBloc extends Bloc<AiCompanionEvent, AiCompanionState> {
         ),
       );
     }
+  }
+
+  @override
+  AiCompanionState? fromJson(Map<String, dynamic> json) {
+    try {
+      final messagesJson = json['messages'] as List<dynamic>?;
+      final messages = messagesJson
+              ?.map((e) => AIMessage.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [];
+
+      return AiCompanionState(
+        status: AiCompanionStatus.values.byName(
+          json['status'] as String? ?? 'initial',
+        ),
+        messages: messages,
+        conversationId: json['conversationId'] as String?,
+        streamingMessage: json['streamingMessage'] as String? ?? '',
+      );
+    } catch (_) {
+      // If deserialization fails, return initial state
+      return null;
+    }
+  }
+
+  @override
+  Map<String, dynamic>? toJson(AiCompanionState state) {
+    // Don't persist error or streaming states
+    if (state.status == AiCompanionStatus.failure ||
+        state.status == AiCompanionStatus.loading) {
+      return null;
+    }
+
+    return {
+      'status': state.status.name,
+      'messages': state.messages.map((m) => m.toJson()).toList(),
+      'conversationId': state.conversationId,
+      'streamingMessage': '', // Don't persist partial streaming messages
+    };
   }
 }
