@@ -1,0 +1,16 @@
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/lumo_icon.png"
+  min_sdk_android: 21
+  
+  # iOS adaptative icon
+  ios_content_mode: "scaleAspectFit"
+  
+  # Android adaptative icon (opcional)
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icon/lumo_icon.png"
+  
+  # Remover icono anterior
+  remove_alpha_ios: true
+
