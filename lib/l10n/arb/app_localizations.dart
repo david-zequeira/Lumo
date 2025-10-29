@@ -866,10 +866,10 @@ abstract class AppLocalizations {
   /// **'Angry'**
   String get emotionAngry;
 
-  /// AI companion title
+  /// Title for AI Companion chat
   ///
   /// In en, this message translates to:
-  /// **'Lumo AI Companion'**
+  /// **'AI Companion'**
   String get aiCompanionTitle;
 
   /// AI companion online status
@@ -949,6 +949,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Physical activity'**
   String get habitExerciseDesc;
+
+  /// Tooltip for clearing chat
+  ///
+  /// In en, this message translates to:
+  /// **'Clear chat'**
+  String get aiCompanionClearChat;
+
+  /// Empty state message for AI chat
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! I\'m your AI companion. Ask me anything about habits, wellness, or motivation.'**
+  String get aiCompanionEmptyState;
+
+  /// Hint text for chat input field
+  ///
+  /// In en, this message translates to:
+  /// **'Type a message...'**
+  String get aiCompanionInputHint;
+
+  /// Error message for AI chat
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get aiCompanionError;
+
+  /// Retry button text
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get aiCompanionRetry;
 }
 
 class _AppLocalizationsDelegate

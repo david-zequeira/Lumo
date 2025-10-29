@@ -140,7 +140,13 @@
   "habitReading": "Leer 30 páginas",
   "habitReadingDesc": "Desarrollo personal diario",
   "habitExercise": "Ejercicio 30 min",
-  "habitExerciseDesc": "Actividad física"
+  "habitExerciseDesc": "Actividad física",
+  "aiCompanionTitle": "Compañero IA",
+  "aiCompanionClearChat": "Limpiar chat",
+  "aiCompanionEmptyState": "¡Hola! Soy tu compañero de IA. Pregúntame lo que quieras sobre hábitos, bienestar o motivación.",
+  "aiCompanionInputHint": "Escribe un mensaje...",
+  "aiCompanionError": "Algo salió mal",
+  "aiCompanionRetry": "Reintentar"
 }
 
 

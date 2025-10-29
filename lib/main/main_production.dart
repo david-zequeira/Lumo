@@ -1,6 +1,9 @@
+import 'package:ai_repository/ai_repository.dart';
 import 'package:article_repository/article_repository.dart';
 import 'package:firebase_authentication_client/firebase_authentication_client.dart';
 import 'package:firebase_notifications_client/firebase_notifications_client.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:gemini_ai_client/gemini_ai_client.dart';
 import 'package:lumo/app/app.dart';
 import 'package:lumo/main/bootstrap/bootstrap.dart';
 import 'package:lumo/src/version.dart';
@@ -78,12 +81,24 @@ void main() {
         apiClient: apiClient,
       );
 
+      // AI Repository setup
+      final aiClient = GeminiAIClient(
+        apiKey: dotenv.env['GEMINI_API_KEY'] ?? '',
+        modelName: dotenv.env['GEMINI_MODEL'] ?? 'gemini-1.5-flash',
+      );
+
+      final aiRepository = AIRepository(
+        client: aiClient,
+        storage: ConversationStorage(storage: persistentStorage),
+      );
+
       return App(
         userRepository: userRepository,
         newsRepository: newsRepository,
         notificationsRepository: notificationsRepository,
         articleRepository: articleRepository,
         analyticsRepository: analyticsRepository,
+        aiRepository: aiRepository,
         user: await userRepository.user.first,
       );
     },

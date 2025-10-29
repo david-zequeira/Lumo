@@ -11,8 +11,14 @@ dependencies:
     path: packages/analytics_repository
   app_ui:
     path: packages/app_ui
+  ai_client:
+    path: packages/ai_client/ai_client
+  ai_repository:
+    path: packages/ai_repository
   article_repository:
     path: packages/article_repository
+  gemini_ai_client:
+    path: packages/ai_client/gemini_ai_client
   authentication_client:
     path: packages/authentication_client/authentication_client
   bloc: ^8.1.0
@@ -77,6 +83,7 @@ dependencies:
   very_good_analysis: ^6.0.0
   video_player_platform_interface: ^6.0.1
   visibility_detector: ^0.4.0+2
+  flutter_dotenv: ^6.0.0
 
 dev_dependencies:
   bloc_test: ^9.0.3
@@ -98,3 +105,5 @@ dependency_overrides:
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - .env

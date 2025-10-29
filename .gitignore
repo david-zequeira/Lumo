@@ -11,6 +11,9 @@
 .svn/
 .mason/
 
+# Environment Variables (SENSITIVE - DO NOT COMMIT)
+.env
+
 # Firebase Configuration Files (SENSITIVE - DO NOT COMMIT)
 lib/firebase_options.dart
 android/app/google-services.json

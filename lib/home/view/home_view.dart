@@ -1,6 +1,7 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lumo/ai_companion/ai_companion.dart';
 import 'package:lumo/app/app.dart';
 import 'package:lumo/home/home.dart';
 import 'package:lumo/l10n/l10n.dart';
@@ -59,7 +60,7 @@ class HomeView extends StatelessWidget {
           children: const [
             HomeDashboardView(),
             _HabitsPlaceholder(),
-            _AIChatPlaceholder(),
+            AiCompanionView(),
             UserProfilePage(),
           ],
         ),
@@ -100,61 +101,6 @@ class _HabitsPlaceholder extends StatelessWidget {
           Text(
             l10n.comingSoon,
             style: const TextStyle(color: AppColors.textSecondary),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// Placeholder temporal para el AI Chat
-class _AIChatPlaceholder extends StatelessWidget {
-  const _AIChatPlaceholder();
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = context.l10n;
-
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [AppColors.primary, AppColors.forest],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(24),
-            ),
-            child: const Icon(
-              Icons.auto_awesome,
-              color: AppColors.white,
-              size: 48,
-            ),
-          ),
-          const SizedBox(height: AppSpacing.lg),
-          Text(
-            l10n.aiCompanionTitle,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            l10n.aiCompanionSubtitle,
-            style: const TextStyle(color: AppColors.textSecondary),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Text(
-            l10n.comingSoon,
-            style: const TextStyle(
-              color: AppColors.primary,
-              fontWeight: FontWeight.w600,
-            ),
           ),
         ],
       ),

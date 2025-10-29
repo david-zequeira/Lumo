@@ -780,5 +780,29 @@
   "habitExerciseDesc": "Physical activity",
   "@habitExerciseDesc": {
     "description": "Exercise habit description"
+  },
+  "aiCompanionTitle": "AI Companion",
+  "@aiCompanionTitle": {
+    "description": "Title for AI Companion chat"
+  },
+  "aiCompanionClearChat": "Clear chat",
+  "@aiCompanionClearChat": {
+    "description": "Tooltip for clearing chat"
+  },
+  "aiCompanionEmptyState": "Hi! I'm your AI companion. Ask me anything about habits, wellness, or motivation.",
+  "@aiCompanionEmptyState": {
+    "description": "Empty state message for AI chat"
+  },
+  "aiCompanionInputHint": "Type a message...",
+  "@aiCompanionInputHint": {
+    "description": "Hint text for chat input field"
+  },
+  "aiCompanionError": "Something went wrong",
+  "@aiCompanionError": {
+    "description": "Error message for AI chat"
+  },
+  "aiCompanionRetry": "Retry",
+  "@aiCompanionRetry": {
+    "description": "Retry button text"
   }
 }

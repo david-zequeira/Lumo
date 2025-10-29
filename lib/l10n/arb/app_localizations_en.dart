@@ -417,7 +417,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get emotionAngry => 'Angry';
 
   @override
-  String get aiCompanionTitle => 'Lumo AI Companion';
+  String get aiCompanionTitle => 'AI Companion';
 
   @override
   String get aiCompanionOnline => 'Online';
@@ -457,4 +457,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get habitExerciseDesc => 'Physical activity';
+
+  @override
+  String get aiCompanionClearChat => 'Clear chat';
+
+  @override
+  String get aiCompanionEmptyState =>
+      'Hi! I\'m your AI companion. Ask me anything about habits, wellness, or motivation.';
+
+  @override
+  String get aiCompanionInputHint => 'Type a message...';
+
+  @override
+  String get aiCompanionError => 'Something went wrong';
+
+  @override
+  String get aiCompanionRetry => 'Retry';
 }

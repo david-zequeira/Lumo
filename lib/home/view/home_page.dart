@@ -1,5 +1,7 @@
+import 'package:ai_repository/ai_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lumo/ai_companion/ai_companion.dart';
 import 'package:lumo/home/home.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,8 +11,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => HomeCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => HomeCubit()),
+        BlocProvider(
+          create: (context) => AiCompanionBloc(
+            aiRepository: context.read<AIRepository>(),
+          )..add(const AiCompanionStarted()),
+        ),
+      ],
       child: const HomeView(),
     );
   }

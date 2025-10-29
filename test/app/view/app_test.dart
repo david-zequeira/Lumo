@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:ai_repository/ai_repository.dart';
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:article_repository/article_repository.dart';
 import 'package:bloc_test/bloc_test.dart';
@@ -31,6 +32,8 @@ class MockAnalyticsRepository extends Mock implements AnalyticsRepository {}
 
 class MockAppBloc extends MockBloc<AppEvent, AppState> implements AppBloc {}
 
+class MockAIRepository extends Mock implements AIRepository {}
+
 class MockAnalyticsBloc
     extends MockBloc<analytics.AnalyticsEvent, analytics.AnalyticsState>
     implements analytics.AnalyticsBloc {}
@@ -41,6 +44,7 @@ void main() {
   group('App', () {
     late UserRepository userRepository;
     late NewsRepository newsRepository;
+    late AIRepository aiRepository;
     late NotificationsRepository notificationsRepository;
     late ArticleRepository articleRepository;
     late AnalyticsRepository analyticsRepository;
@@ -52,6 +56,7 @@ void main() {
       newsRepository = MockNewsRepository();
       notificationsRepository = MockNotificationsRepository();
       articleRepository = MockArticleRepository();
+      aiRepository = MockAIRepository();
       analyticsRepository = MockAnalyticsRepository();
 
       when(() => userRepository.user).thenAnswer((_) => const Stream.empty());
@@ -65,6 +70,7 @@ void main() {
     testWidgets('renders AppView', (tester) async {
       await tester.pumpWidget(
         App(
+          aiRepository: aiRepository,
           userRepository: userRepository,
           newsRepository: newsRepository,
           notificationsRepository: notificationsRepository,

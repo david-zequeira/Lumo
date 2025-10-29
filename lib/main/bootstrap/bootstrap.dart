@@ -7,6 +7,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:lumo/firebase_options.dart';
 import 'package:lumo/main/bootstrap/app_bloc_observer.dart';
@@ -27,6 +28,9 @@ Future<void> bootstrap(AppBuilder builder) async {
   await runZonedGuarded<Future<void>>(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+
+      // Load environment variables
+      await dotenv.load();
 
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,

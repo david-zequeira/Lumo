@@ -1,3 +1,4 @@
+import 'package:ai_repository/ai_repository.dart';
 import 'package:analytics_repository/analytics_repository.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:article_repository/article_repository.dart';
@@ -20,6 +21,7 @@ class App extends StatelessWidget {
     required NotificationsRepository notificationsRepository,
     required ArticleRepository articleRepository,
     required AnalyticsRepository analyticsRepository,
+    required AIRepository aiRepository,
     required User user,
     super.key,
   })  : _userRepository = userRepository,
@@ -27,6 +29,7 @@ class App extends StatelessWidget {
         _notificationsRepository = notificationsRepository,
         _articleRepository = articleRepository,
         _analyticsRepository = analyticsRepository,
+        _aiRepository = aiRepository,
         _user = user;
 
   final UserRepository _userRepository;
@@ -34,6 +37,7 @@ class App extends StatelessWidget {
   final NotificationsRepository _notificationsRepository;
   final ArticleRepository _articleRepository;
   final AnalyticsRepository _analyticsRepository;
+  final AIRepository _aiRepository;
   final User _user;
 
   @override
@@ -45,6 +49,7 @@ class App extends StatelessWidget {
         RepositoryProvider.value(value: _notificationsRepository),
         RepositoryProvider.value(value: _articleRepository),
         RepositoryProvider.value(value: _analyticsRepository),
+        RepositoryProvider.value(value: _aiRepository),
       ],
       child: MultiBlocProvider(
         providers: [
