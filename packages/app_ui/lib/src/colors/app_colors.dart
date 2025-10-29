@@ -203,64 +203,64 @@ abstract class AppColors {
   // ============================================================================
   // COLORES LEGACY (Mantener temporalmente para compatibilidad)
   // ============================================================================
-  
+
   /// Dark aqua - Reemplazado por primary pero mantenido para compatibilidad
   static const Color darkAqua = Color(0xFF3CC47C);
-  
+
   /// Primary container
   static const Color primaryContainer = Color(0xFFE6F9F0);
-  
+
   /// On-background
   static const Color onBackground = Color(0xFF1A1A1A);
-  
+
   /// Gainsboro
   static const Color gainsboro = Color(0xFFDADCE0);
-  
+
   /// Orange - Para warnings
   static const Color orange = Color(0xFFF59E0B);
-  
+
   /// Blue - Reemplazado por primary
   static const Color blue = Color(0xFF3CC47C);
-  
+
   /// Sky blue - Reemplazado por primary light
   static const Color skyBlue = Color(0xFF6FD99B);
-  
+
   /// Ocean blue - Reemplazado por forest
   static const Color oceanBlue = Color(0xFF1E392A);
-  
+
   /// Light black
   static const Color lightBlack = Color(0x8A000000);
-  
+
   /// Blue dress - Reemplazado por primary
   static const Color blueDress = Color(0xFF3CC47C);
-  
+
   /// Crystal blue - Reemplazado por electric light
   static const Color crystalBlue = Color(0xFF6FD99B);
-  
+
   /// Pale sky
   static const Color paleSky = Color(0xFF828081);
-  
+
   /// Pastel grey
   static const Color pastelGrey = Color(0xFFCCCCCC);
-  
+
   /// Bright grey
   static const Color brightGrey = Color(0xFFEAEAEA);
-  
+
   /// Rangoon green - Reemplazado por forest dark
   static const Color rangoonGreen = Color(0xFF0F1D15);
-  
+
   /// Eerie black - Reemplazado por forest dark
   static const Color eerieBlack = Color(0xFF0F1D15);
-  
+
   /// Liver
   static const Color liver = Color(0xFF4D4D4D);
-  
+
   /// Red wine - Reemplazado por error
   static const Color redWine = Color(0xFFEF4444);
-  
+
   /// Surface 2
   static const Color surface2 = Color(0xFFF5F5F6);
-  
+
   /// Grey MaterialColor
   static const MaterialColor grey = MaterialColor(0xFF828081, <int, Color>{
     50: Color(0xFFFAFAFA),
@@ -274,7 +274,7 @@ abstract class AppColors {
     800: Color(0xFF424242),
     900: Color(0xFF212121),
   });
-  
+
   /// Green MaterialColor
   static const MaterialColor green = MaterialColor(0xFF3CC47C, <int, Color>{
     50: Color(0xFFE6F9F0),
@@ -288,8 +288,8 @@ abstract class AppColors {
     800: Color(0xFF177034),
     900: Color(0xFF0B541C),
   });
-  
-  /// Light blue MaterialColor  
+
+  /// Light blue MaterialColor
   static const MaterialColor lightBlue = MaterialColor(0xFF6FD99B, <int, Color>{
     50: Color(0xFFE8F5EE),
     100: Color(0xFFC6E7D6),
@@ -302,7 +302,7 @@ abstract class AppColors {
     800: Color(0xFF34A060),
     900: Color(0xFF21874D),
   });
-  
+
   /// Teal MaterialColor
   static const MaterialColor teal = MaterialColor(0xFF3CC47C, <int, Color>{
     50: Color(0xFFE6F9F0),
@@ -316,7 +316,7 @@ abstract class AppColors {
     800: Color(0xFF177034),
     900: Color(0xFF0B541C),
   });
-  
+
   /// Yellow MaterialColor
   static const MaterialColor yellow = MaterialColor(0xFFFBBF24, <int, Color>{
     50: Color(0xFFFFFBEB),
@@ -330,7 +330,7 @@ abstract class AppColors {
     800: Color(0xFF92400E),
     900: Color(0xFF78350F),
   });
-  
+
   /// Red MaterialColor
   static const MaterialColor red = MaterialColor(0xFFEF4444, <int, Color>{
     50: Color(0xFFFEF2F2),
@@ -344,7 +344,7 @@ abstract class AppColors {
     800: Color(0xFF991B1B),
     900: Color(0xFF7F1D1D),
   });
-  
+
   /// Secondary color - Adaptado a paleta Lumo
   static const MaterialColor secondary = MaterialColor(0xFFE9C893, <int, Color>{
     50: Color(0xFFFFF9F0),

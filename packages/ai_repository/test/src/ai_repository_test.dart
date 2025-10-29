@@ -18,10 +18,11 @@ void main() {
     setUp(() {
       client = MockAIClient();
       storage = MockStorage();
-      
+
       // Default mock for storage
-      when(() => storage.read(key: any(named: 'key')))
-          .thenAnswer((_) async => null);
+      when(
+        () => storage.read(key: any(named: 'key')),
+      ).thenAnswer((_) async => null);
       when(
         () => storage.write(
           key: any(named: 'key'),
@@ -150,11 +151,13 @@ void main() {
     group('getConversation', () {
       test('returns conversation history from storage', () async {
         const conversationId = 'test-conversation';
-        const storedJson = '[{"content":"Hello","role":"user",'
+        const storedJson =
+            '[{"content":"Hello","role":"user",'
             '"timestamp":"2024-01-01T00:00:00.000Z"}]';
 
-        when(() => storage.read(key: any(named: 'key')))
-            .thenAnswer((_) async => storedJson);
+        when(
+          () => storage.read(key: any(named: 'key')),
+        ).thenAnswer((_) async => storedJson);
 
         final result = await repository.getConversation(
           conversationId: conversationId,
@@ -166,8 +169,9 @@ void main() {
       });
 
       test('returns empty list when no conversation exists', () async {
-        when(() => storage.read(key: any(named: 'key')))
-            .thenAnswer((_) async => null);
+        when(
+          () => storage.read(key: any(named: 'key')),
+        ).thenAnswer((_) async => null);
 
         final result = await repository.getConversation(
           conversationId: 'non-existent',
@@ -177,8 +181,9 @@ void main() {
       });
 
       test('throws GetConversationFailure on storage error', () async {
-        when(() => storage.read(key: any(named: 'key')))
-            .thenThrow(Exception('Storage error'));
+        when(
+          () => storage.read(key: any(named: 'key')),
+        ).thenThrow(Exception('Storage error'));
 
         expect(
           () => repository.getConversation(conversationId: 'test'),
@@ -220,8 +225,9 @@ void main() {
       test('returns last conversation ID', () async {
         const expectedId = 'last-conversation';
 
-        when(() => storage.read(key: any(named: 'key')))
-            .thenAnswer((_) async => expectedId);
+        when(
+          () => storage.read(key: any(named: 'key')),
+        ).thenAnswer((_) async => expectedId);
 
         final result = await repository.getLastConversationId();
 
@@ -229,8 +235,9 @@ void main() {
       });
 
       test('returns null when no last conversation', () async {
-        when(() => storage.read(key: any(named: 'key')))
-            .thenAnswer((_) async => null);
+        when(
+          () => storage.read(key: any(named: 'key')),
+        ).thenAnswer((_) async => null);
 
         final result = await repository.getLastConversationId();
 

@@ -61,4 +61,3 @@ class GetLastConversationFailure extends AIFailure {
   /// {@macro get_last_conversation_failure}
   const GetLastConversationFailure(super.error);
 }
-
