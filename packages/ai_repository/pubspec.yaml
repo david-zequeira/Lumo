@@ -1,0 +1,19 @@
+name: ai_repository
+description: Repository for AI interactions and conversation management
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  ai_client:
+    path: ../ai_client/ai_client
+  clock: ^1.1.0
+  storage:
+    path: ../storage/storage
+
+dev_dependencies:
+  mocktail: ^1.0.4
+  test: ^1.26.3
+  very_good_analysis: ^10.0.0

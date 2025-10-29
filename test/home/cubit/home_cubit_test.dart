@@ -8,36 +8,45 @@ void main() {
       test('has correct initial state', () async {
         expect(
           HomeCubit().state,
-          equals(HomeState.topStories),
+          equals(HomeState.dashboard),
         );
       });
     });
 
     group('setTab', () {
       blocTest<HomeCubit, HomeState>(
-        'sets tab on top stories',
+        'sets tab on dashboard',
         build: HomeCubit.new,
         act: (cubit) => cubit.setTab(0),
         expect: () => [
-          HomeState.topStories,
+          HomeState.dashboard,
         ],
       );
 
       blocTest<HomeCubit, HomeState>(
-        'sets tab on search',
+        'sets tab on habits',
         build: HomeCubit.new,
         act: (cubit) => cubit.setTab(1),
         expect: () => [
-          HomeState.search,
+          HomeState.habits,
         ],
       );
 
       blocTest<HomeCubit, HomeState>(
-        'sets tab on subscribe',
+        'sets tab on aiChat',
         build: HomeCubit.new,
         act: (cubit) => cubit.setTab(2),
         expect: () => [
-          HomeState.subscribe,
+          HomeState.aiChat,
+        ],
+      );
+
+      blocTest<HomeCubit, HomeState>(
+        'sets tab on profile',
+        build: HomeCubit.new,
+        act: (cubit) => cubit.setTab(3),
+        expect: () => [
+          HomeState.profile,
         ],
       );
     });

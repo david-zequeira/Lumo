@@ -1,0 +1,17 @@
+name: gemini_ai_client
+description: Google Gemini AI client implementation
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  ai_client:
+    path: ../ai_client
+  google_generative_ai: ^0.4.6
+
+dev_dependencies:
+  mocktail: ^1.0.4
+  test: ^1.26.3
+  very_good_analysis: ^10.0.0
